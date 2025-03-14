@@ -91,9 +91,7 @@ MIT
 ## 联系方式
 
 如有任何问题或建议，请通过以下方式联系我们：
-- 电子邮件：contact@pepetrend.com
-- Twitter：[@PepeTrendPredictor](https://twitter.com/PepeTrendPredictor)
-- Discord：[Pepe Trend Community](https://discord.gg/pepetrend)
+- 电子邮件：oboard@outlook.com
 
 ---
 
