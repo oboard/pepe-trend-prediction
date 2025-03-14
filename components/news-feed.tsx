@@ -252,7 +252,7 @@ export default function NewsFeed() {
                     <div key={item.id} className="border rounded-lg p-3 hover:bg-muted/50 transition-colors">
                       <div className="flex justify-between items-start mb-2">
                         <h3 className="font-medium">{item.title}</h3>
-                        {getSentimentBadge(sentiment)}
+                        <div className="shrink-0">{getSentimentBadge(sentiment)}</div>
                       </div>
                       <div className="text-sm text-muted-foreground mb-2 line-clamp-2">{item.body}</div>
                       <div className="flex justify-between items-center text-sm text-muted-foreground">

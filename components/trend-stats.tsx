@@ -4,6 +4,7 @@ import { ArrowUpRight, ArrowDownRight, Minus, TrendingUp, TrendingDown, Info } f
 import { Progress } from "@/components/ui/progress"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import type { PredictionResult } from "@/lib/prediction-service"
+import { Card } from "./ui/card"
 
 interface TrendStatsProps {
   data: PredictionResult | null
@@ -70,7 +71,7 @@ export default function TrendStats({ data }: TrendStatsProps) {
   const rsiStatus = getRsiStatus(indicators.rsi)
 
   return (
-    <div className="space-y-6">
+    <Card className="p-4 space-y-6">
       <div className="flex items-center justify-between">
         <div>
           <div className="text-sm text-muted-foreground">AI预测</div>
@@ -238,7 +239,7 @@ export default function TrendStats({ data }: TrendStatsProps) {
           </div>
         </div>
       </div>
-    </div>
+    </Card>
   )
 }
 

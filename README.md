@@ -27,6 +27,7 @@ Pepe 趋势预测器是一个专为加密货币投资者和交易者设计的工
 - **图表**：TradingView Widget、Recharts
 - **表单处理**：React Hook Form + Zod
 - **样式**：Tailwind CSS
+- **数据源**：LunarCrush API、Santiment API
 
 ## 开始使用
 
@@ -48,17 +49,57 @@ cd pepe-trend-prediction
 pnpm install
 ```
 
-3. 启动开发服务器
+3. 配置环境变量
+   
+   复制 `.env.local.example` 文件为 `.env.local`，并填入您的 API 密钥：
+   ```bash
+   cp .env.local.example .env.local
+   ```
+   
+   然后编辑 `.env.local` 文件，填入以下信息：
+   ```
+   LUNARCRUSH_API_KEY=your_lunarcrush_api_key_here
+   SANTIMENT_API_KEY=your_santiment_api_key_here
+   ```
+   
+   您可以从以下网站获取 API 密钥：
+   - LunarCrush API: https://lunarcrush.com/developers/api
+     - 注册账号并访问开发者页面
+     - 创建一个新的 API 密钥
+     - 免费计划每天有 100 次请求限制，足够个人使用
+   
+   - Santiment API: https://app.santiment.net/account#api-keys
+     - 注册账号并访问 API 密钥页面
+     - 创建一个新的 API 密钥
+     - 免费计划有一定的请求限制，但足够基本使用
+
+   **注意**：如果您没有 API 密钥，应用程序仍然可以运行，但会使用备用的历史数据。
+
+4. 启动开发服务器
 ```bash
 pnpm dev
 ```
 
-4. 在浏览器中打开 [http://localhost:3000](http://localhost:3000)
+5. 在浏览器中打开 [http://localhost:3000](http://localhost:3000)
 
-## 构建生产版本
+## 部署到生产环境
 
+1. 构建生产版本
 ```bash
 pnpm build
+```
+
+2. 配置生产环境变量
+   
+   在部署平台（如 Vercel、Netlify 等）上设置以下环境变量：
+   ```
+   LUNARCRUSH_API_KEY=your_lunarcrush_api_key_here
+   SANTIMENT_API_KEY=your_santiment_api_key_here
+   NODE_ENV=production
+   ```
+
+3. 启动生产服务器
+```bash
 pnpm start
 ```
 
